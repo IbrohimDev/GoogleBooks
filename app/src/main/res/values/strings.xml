@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GoogleBooks</string>
+    <string name="home">Home</string>
+    <string name="star">Star</string>
+    <string name="search_text">Search</string>
+    <string name="link_text">Click to view</string>
+    <string name="error_text">Some Error Occurred</string>
+    <string name="retry_text">Retry</string>
+</resources>

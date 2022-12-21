@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@android:color/darker_gray</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+    </style>
+
+    <style name="progress_bar">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="theme">@style/Theme.GoogleBooks.BlackAccent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="text_error">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:text">@string/error_text</item>
+    </style>
+
+    <style name="button_retry">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:text">@string/retry_text</item>
+        <item name="background">@drawable/bg_button_contained_round</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="Theme.GoogleBooks.BlackAccent">
+        <item name="colorAccent">@color/background_color</item> <!-- Whatever color you want-->
+    </style>
+</resources>

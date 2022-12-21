@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.page.HomePage">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_margin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_margin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_query_outer"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/search_background"
+        android:hint="@string/search_text"
+        android:textColorHint="@android:color/darker_gray"
+        app:hintTextColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.1"
+        app:startIconDrawable="@drawable/ic_search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minLines="1" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/search_query_outer" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/no_data_lottie"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/search_query_outer"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/no_data" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
