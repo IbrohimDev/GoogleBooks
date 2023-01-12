@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
@@ -55,6 +56,12 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    /**
+     * Firebase
+     */
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     /**
      * Navigation
@@ -137,5 +144,10 @@ dependencies {
     implementation "androidx.room:room-runtime:2.4.3"
     kapt 'androidx.room:room-compiler:2.4.3'
     implementation "androidx.room:room-ktx:2.4.3"
+
+    /**
+     * Firebase Auth
+     */
+    implementation 'com.google.firebase:firebase-auth-ktx'
 
 }

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/register_screen"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screen.RegisterScreen">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_margin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_margin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/welcome_text_in_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_text_register"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/subtitle_in_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitle_text_register"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/welcome_text_in_register"
+        app:layout_constraintTop_toBottomOf="@id/welcome_text_in_register"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_input_outer"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="@dimen/_2sdp"
+        android:hint="@string/email_text"
+        android:textColorHint="@android:color/darker_gray"
+        app:hintTextColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_in_register"
+        app:layout_constraintVertical_bias="0.1"
+        app:startIconDrawable="@drawable/ic_person">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:minLines="1" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_input_outer"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="@dimen/_2sdp"
+        android:hint="@string/password_text"
+        android:textColorHint="@android:color/darker_gray"
+        app:hintTextColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/email_input_outer"
+        app:layout_constraintVertical_bias="0.05"
+        app:startIconDrawable="@drawable/ic_password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:minLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signup_or_signIn_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="@string/signup_text"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/password_input_outer"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/sign_up_or_sign_in_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_2sdp"
+        android:padding="@dimen/_4sdp"
+        android:text="@string/sign_in_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/signup_or_signIn_button"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/password_input_outer" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/status_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

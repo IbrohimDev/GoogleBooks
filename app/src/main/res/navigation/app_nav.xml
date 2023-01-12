@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav"
-    app:startDestination="@id/mainScreen">
+    app:startDestination="@id/registerScreen">
 
     <fragment
         android:id="@+id/mainScreen"
         android:name="com.example.googlebooks.presentation.ui.screen.MainScreen"
         android:label="MainScreen" />
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="com.example.googlebooks.presentation.ui.screen.RegisterScreen"
+        android:label="screen_register"
+        tools:layout="@layout/screen_register" >
+        <action
+            android:id="@+id/action_registerScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

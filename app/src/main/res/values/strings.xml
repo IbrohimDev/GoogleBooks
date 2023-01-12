@@ -6,4 +6,11 @@
     <string name="link_text">Click to view</string>
     <string name="error_text">Some Error Occurred</string>
     <string name="retry_text">Retry</string>
+    <string name="welcome_text_register">Welcome!</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="sign_in_text">Sign In</string>
+    <string name="signup_text">Sign Up</string>
+    <string name="subtitle_text_register">Get the best from our app</string>
+
 </resources>

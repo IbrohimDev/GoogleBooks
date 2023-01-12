@@ -23,6 +23,7 @@ class MainScreen : Fragment(R.layout.screen_main) {
     private val binding: ScreenMainBinding by viewBinding(ScreenMainBinding::bind)
     private var _adapter: PagerAdapter? = null
     private val adapter: PagerAdapter get() = _adapter!!
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         binding.bottomView.setOnItemSelectedListener {

@@ -3,6 +3,7 @@ package com.example.googlebooks.domain.repository
 import androidx.paging.PagingData
 import com.example.googlebooks.data.local.entity.StarEntity
 import com.example.googlebooks.data.remote.response.Item
+import com.example.googlebooks.domain.model.ManageUiSealed
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
@@ -23,4 +24,10 @@ interface AppRepository {
     fun deleteStarFromDb(bookId: String)
 
     fun starCount(): Flow<List<StarEntity>>
+
+    fun createUser(email: String, password: String): Flow<ManageUiSealed>
+
+    fun signInUser(email: String,password: String):Flow<ManageUiSealed>
+
+    fun checkUserValid():Flow<Boolean>
 }

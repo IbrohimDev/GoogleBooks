@@ -5,6 +5,9 @@ import androidx.paging.PagingConfig
 import com.example.googlebooks.BuildConfig
 import com.example.googlebooks.data.remote.api.BooksApi
 import com.example.googlebooks.util.addLoggingInterceptor
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +22,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetWorkModule {
+
+    @[Provides Singleton]
+    fun firebaseAuthInstall(): FirebaseAuth = Firebase.auth
 
     @[Provides Singleton]
     fun booksApi(retrofit: Retrofit): BooksApi =
