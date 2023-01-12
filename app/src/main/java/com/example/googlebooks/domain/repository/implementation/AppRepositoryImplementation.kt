@@ -10,6 +10,7 @@ import com.example.googlebooks.data.local.dao.StarDao
 import kotlinx.coroutines.flow.catch
 
 import com.example.googlebooks.data.local.entity.StarEntity
+import com.example.googlebooks.data.local.preferences.SharedData
 import com.example.googlebooks.data.remote.api.BooksApi
 import com.example.googlebooks.data.remote.dataSource.BooksDataSource
 import com.example.googlebooks.data.remote.dataSource.BooksDataSourceOffline
@@ -31,6 +32,7 @@ class AppRepositoryImplementation @Inject constructor(
     private val config: PagingConfig,
     private val auth: FirebaseAuth,
     private val starDao: StarDao,
+    private val sharedData: SharedData,
     private val context: Context
 ) : AppRepository {
 
@@ -95,4 +97,22 @@ class AppRepositoryImplementation @Inject constructor(
             emit(true)
         } ?: emit(false)
     }.flowOn(Dispatchers.IO)
+
+    override fun setFirstName(text: String) {
+        sharedData.firtName = text
+    }
+
+    override fun setLastName(text: String) {
+        sharedData.lastName = text
+    }
+
+    override fun setAge(text: String) {
+        sharedData.age = text
+    }
+
+    override fun getFirstName() = sharedData.firtName
+
+    override fun getLastName() = sharedData.lastName
+
+    override fun getAge() = sharedData.age
 }

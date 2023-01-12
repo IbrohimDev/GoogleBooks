@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.googlebooks.data.local.appDatabase.AppDatabase
 import com.example.googlebooks.data.local.dao.StarDao
+import com.example.googlebooks.data.local.preferences.SharedData
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,6 +24,10 @@ class DatabaseModule {
 
     @Provides
     fun provideChannelDao(appDatabase: AppDatabase): StarDao = appDatabase.starDao()
+
+    @Provides
+    @Singleton
+    fun getSharedPref(context: Context): SharedData = SharedData(context)
 
 
 }

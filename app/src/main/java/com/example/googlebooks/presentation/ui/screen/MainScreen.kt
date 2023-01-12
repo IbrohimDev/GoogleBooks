@@ -64,6 +64,9 @@ class MainScreen : Fragment(R.layout.screen_main) {
             R.id.star_id -> {
                 binding.pager.setCurrentItem(1, true)
             }
+            R.id.setting_id -> {
+                binding.pager.setCurrentItem(2, true)
+            }
         }
     }
 

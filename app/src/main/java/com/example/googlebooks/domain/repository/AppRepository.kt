@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface AppRepository {
 
-
     fun searchedItems(
         searchText: String,
         scope: CoroutineScope
@@ -27,7 +26,19 @@ interface AppRepository {
 
     fun createUser(email: String, password: String): Flow<ManageUiSealed>
 
-    fun signInUser(email: String,password: String):Flow<ManageUiSealed>
+    fun signInUser(email: String, password: String): Flow<ManageUiSealed>
 
-    fun checkUserValid():Flow<Boolean>
+    fun checkUserValid(): Flow<Boolean>
+
+    fun setFirstName(text: String)
+
+    fun setLastName(text: String)
+
+    fun setAge(text: String)
+
+    fun getFirstName(): String
+
+    fun getLastName(): String
+
+    fun getAge(): String
 }

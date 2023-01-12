@@ -2,6 +2,7 @@
     <string name="app_name">GoogleBooks</string>
     <string name="home">Home</string>
     <string name="star">Star</string>
+    <string name="setting">Settings</string>
     <string name="search_text">Search</string>
     <string name="link_text">Click to view</string>
     <string name="error_text">Some Error Occurred</string>
@@ -12,5 +13,9 @@
     <string name="sign_in_text">Sign In</string>
     <string name="signup_text">Sign Up</string>
     <string name="subtitle_text_register">Get the best from our app</string>
+    <string name="info_text">Personal Info</string>
+    <string name="person_name">First Name</string>
+    <string name="person_last">Last Name</string>
+    <string name="person_age">Age</string>
 
 </resources>

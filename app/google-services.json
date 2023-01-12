@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "564367414941",
+    "project_id": "newsintegration-78a92",
+    "storage_bucket": "newsintegration-78a92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564367414941:android:e00df563f8e658f2e1e674",
+        "android_client_info": {
+          "package_name": "com.example.googlebooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564367414941-tuvb6g76pbqmhvv1vv047uqgni27gk0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5X6zsjlYreqV641SGSSggK1w_-6l-HPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564367414941-tuvb6g76pbqmhvv1vv047uqgni27gk0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564367414941:android:da703d839ae29f24e1e674",
+        "android_client_info": {
+          "package_name": "com.example.newsintegration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564367414941-tuvb6g76pbqmhvv1vv047uqgni27gk0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5X6zsjlYreqV641SGSSggK1w_-6l-HPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564367414941-tuvb6g76pbqmhvv1vv047uqgni27gk0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
