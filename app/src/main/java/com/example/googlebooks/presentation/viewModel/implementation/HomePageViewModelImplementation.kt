@@ -1,8 +1,10 @@
 package com.example.googlebooks.presentation.viewModel.implementation
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
+import com.example.googlebooks.R
 import com.example.googlebooks.data.local.entity.StarEntity
 import com.example.googlebooks.data.remote.response.Item
 import com.example.googlebooks.domain.repository.AppRepository
@@ -18,7 +20,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomePageViewModelImplementation @Inject constructor(
-    private val appRepository: AppRepository
+    private val appRepository: AppRepository,
+    private val context: Context,
 ) : HomePageViewModel, ViewModel() {
 
     override val booksPagingData = MutableSharedFlow<PagingData<Item>>(
@@ -37,6 +40,8 @@ class HomePageViewModelImplementation @Inject constructor(
 
     init {
         pagerAdapter.tryEmit(Unit)
+        stateSearch(false)
+        searchEditText(context.resources.getString(R.string.default_text_list))
     }
 
     override fun searchEditText(text: String) {

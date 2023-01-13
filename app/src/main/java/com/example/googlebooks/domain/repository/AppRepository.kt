@@ -41,4 +41,6 @@ interface AppRepository {
     fun getLastName(): String
 
     fun getAge(): String
+
+    fun signOut():Flow<Unit>
 }

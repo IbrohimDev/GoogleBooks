@@ -5,6 +5,7 @@ import android.content.Context
 import com.example.googlebooks.data.local.dao.StarDao
 import com.example.googlebooks.presentation.ui.adapter.PagingAdapter
 import com.example.googlebooks.presentation.ui.adapter.PagingLocalAdapter
+import com.example.googlebooks.presentation.ui.dialog.SignOutDialog
 import dagger.Module
 import dagger.Provides
 
@@ -17,9 +18,12 @@ import dagger.hilt.android.components.FragmentComponent
 class AppModule {
 
     @Provides
-    fun pagingAdapter(context: Context,starDao: StarDao) = PagingAdapter(context,starDao)
+    fun pagingAdapter(context: Context, starDao: StarDao) = PagingAdapter(context, starDao)
 
     @Provides
     fun pagingLocalAdapter(context: Context) = PagingLocalAdapter(context)
+
+    @Provides
+    fun singOutDialog() = SignOutDialog()
 
 }

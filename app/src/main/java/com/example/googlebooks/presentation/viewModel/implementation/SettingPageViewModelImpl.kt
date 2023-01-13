@@ -1,13 +1,14 @@
 package com.example.googlebooks.presentation.viewModel.implementation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.googlebooks.domain.repository.AppRepository
 import com.example.googlebooks.presentation.viewModel.SettingPageViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.BufferOverflow
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -23,6 +24,11 @@ class SettingPageViewModelImpl @Inject constructor(
 
     override val ageTextObserver =
         MutableSharedFlow<String>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+    override val signOutDialogObserver =
+        MutableSharedFlow<Unit>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+    override val logOutAppObserver =
+        MutableSharedFlow<Unit>(replay = 1, onBufferOverflow = BufferOverflow.DROP_OLDEST)
+
 
     init {
         firstNameObserver.tryEmit(repository.getFirstName())
@@ -41,6 +47,16 @@ class SettingPageViewModelImpl @Inject constructor(
 
     override fun setAgeText(text: String) {
         repository.setAge(text)
+    }
+
+    override fun clickSignOut() {
+        signOutDialogObserver.tryEmit(Unit)
+    }
+
+    override fun signOutDialog() {
+        repository.signOut().onEach {
+              logOutAppObserver.emit(Unit)
+        }.launchIn(viewModelScope)
     }
 
 }

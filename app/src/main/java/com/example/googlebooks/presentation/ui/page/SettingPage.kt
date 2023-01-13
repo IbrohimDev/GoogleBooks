@@ -10,10 +10,12 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.googlebooks.R
 import com.example.googlebooks.databinding.PageSettingBinding
+import com.example.googlebooks.presentation.ui.dialog.SignOutDialog
 import com.example.googlebooks.presentation.viewModel.SettingPageViewModel
 import com.example.googlebooks.presentation.viewModel.implementation.SettingPageViewModelImpl
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -21,6 +23,9 @@ class SettingPage : Fragment(R.layout.page_setting) {
 
     private val binding: PageSettingBinding by viewBinding(PageSettingBinding::bind)
     private val viewModel: SettingPageViewModel by viewModels<SettingPageViewModelImpl>()
+
+    @Inject
+    lateinit var dialog: SignOutDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -38,6 +43,20 @@ class SettingPage : Fragment(R.layout.page_setting) {
             viewModel.ageTextObserver.collect {
                 observerAgeText(it)
             }
+        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.signOutDialogObserver.collect {
+                observerSignOut()
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.logOutAppObserver.collect {
+                logOutObserver()
+            }
+        }
+
+        binding.signOutButton.setOnClickListener {
+            viewModel.clickSignOut()
         }
 
         binding.firstName.addTextChangedListener(object : TextWatcher {
@@ -88,6 +107,13 @@ class SettingPage : Fragment(R.layout.page_setting) {
         })
     }
 
+    private fun observerSignOut() {
+        dialog.show(childFragmentManager, "Dialog")
+        dialog.setYesListener {
+            viewModel.signOutDialog()
+        }
+    }
+
     private fun observerFirstName(text: String) {
         binding.firstName.setText(text)
     }
@@ -98,5 +124,11 @@ class SettingPage : Fragment(R.layout.page_setting) {
 
     private fun observerAgeText(text: String) {
         binding.ageText.setText(text)
+    }
+
+    private fun logOutObserver() {
+        activity?.let {
+            it.finish()
+        }
     }
 }

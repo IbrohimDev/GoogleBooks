@@ -17,5 +17,10 @@
     <string name="person_name">First Name</string>
     <string name="person_last">Last Name</string>
     <string name="person_age">Age</string>
+    <string name="log_out_text">Do you want to Log out?</string>
+    <string name="yes_text">Yes</string>
+    <string name="no_text">No</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="default_text_list">IT</string>
 
 </resources>

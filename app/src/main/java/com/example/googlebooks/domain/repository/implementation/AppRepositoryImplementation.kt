@@ -115,4 +115,8 @@ class AppRepositoryImplementation @Inject constructor(
     override fun getLastName() = sharedData.lastName
 
     override fun getAge() = sharedData.age
+    override fun signOut(): Flow<Unit> = flow {
+        auth.signOut()
+        emit(Unit)
+    }.flowOn(Dispatchers.IO)
 }
